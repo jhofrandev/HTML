@@ -12,6 +12,7 @@
       En <strong>HTML</strong>, las etiquetas y los atributos son las dos cosas
       más importantes para construir una página web.
     </p>
+
     <h2>🔖 ¿Qué son las etiquetas (tags)?</h2>
     <p>
       Las etiquetas son palabras que van entre &lt; &gt; y sirven para definir
@@ -39,5 +40,140 @@
       <li>🔒 Etiqueta de cierre</li>
       <li>Todo lo que este adentro es el contenido</li>
     </ul>
+
+    <h2>🔩 ¿Qué son los atributos?</h2>
+    <p>Los atributos dan información extra sobre una etiqueta.</p>
+    <p>Van dento de la etiqueta de apertura</p>
+    <p>Sirven para:</p>
+    <ul>
+      <li>Indicar la dirección de una imagen</li>
+      <li>Decir a dónde va un enlance</li>
+      <li>Cambiar tamaño</li>
+      <li>Agregar colores</li>
+      <li>Identificar elementos</li>
+      <li>Etc.</li>
+    </ul>
+    <h3>📌 Ejemplo con enlace:</h3>
+    <pre>
+      <code>
+        &lt;a href="https://www.ejemplo.com"&gt;Esto es un enlace&lt;/a&gt;
+      </code>
+    </pre>
+    <p>👉 El atributo href le dice al enlace a qué página ir.</p>
+    <p>👉 Las etiquetas crean el elemento</p>
+    <p>👉 Los atributos lo modifican</p>
+
+    <h1>Insensibilidad a mayúsculas</h1>
+    <p>
+      La case insensitivity (insensibilidad a mayúsculas y minúsculas) en HTML
+      es algo muy importante cuando estás empezando.
+    </p>
+    <h2>🔤 ¿Qué significa que HTML sea case insensitive?</h2>
+    <p>Significa que HTML NO distingue entre mayúscla y minúsculas:</p>
+    <p>✅ Las etiquetas</p>
+    <p>✅ Los atributos</p>
+    <p>El navegador entiende lo mismo aunque escribas:</p>
+    <pre>
+      <code>
+        &lt;h1&gt;Esto es un título&lt;/h1&gt;
+        &lt;H1&gt;Esto es un título&lt;/H1&gt;
+        &lt;h1&gt;Esto es un título&lt;/H1&gt;
+      </code>
+    </pre>
+    <h2>⚠️ PERO OJO: Los valores de los atributos SÍ pueden ser sensibles</h2>
+    <p>Esto NO siempre es lo mismo:</p>
+    <pre>
+      <code>
+        &lt;a href="https://www.ejemplo.com"&gt;Esto es un enlace&lt;/a&gt;
+        &lt;a href="HTTPS://WWW.EJEMPLO.COM"&gt;Esto es un enlace&lt;/a&gt;
+      </code>
+    </pre>
+
+    <h1>🔎 ¿Qué son las Entidades HTML (HTML Entities)?</h1>
+    <p>
+      Las entidades HTML son códigos especiales que se usan para mostrar
+      caracteres o símbolos en una página web.
+    </p>
+    <p>Son necesaruis cyabdi quieres escribir:</p>
+    <ul>
+      <li>Símbolos especiales (&amp; &lt; &gt;)</li>
+      <li>Acentos (á, é, í, ó, ú)</li>
+      <li>Expacios especiales (&nbsp;)</li>
+      <li>O caracteres que HTML usa como código (&lt; &gt;)</li>
+    </ul>
+    <h2>🧩 ¿Cómo se escribe una entidad HTML?</h2>
+    <p>Tadas tienen esta estructura: &amp;nombre;</p>
+    <p>Siempre:</p>
+    <ul>
+      <li>Empiezan con &amp;</li>
+      <li>Terminan con ;</li>
+    </ul>
+    <h3>✏️ Ejemplos importantes:</h3>
+    <table>
+      <tr>
+        <th>Símbolo</th>
+        <th>Entidad HTML</th>
+      </tr>
+      <tr>
+        <td>&amp;</td>
+        <td>&amp;amp;</td>
+      </tr>
+      <tr>
+        <td>&lt;</td>
+        <td>&amp;lt;</td>
+      </tr>
+      <tr>
+        <td>&gt;</td>
+        <td>&amp;gt;</td>
+      </tr>
+      <tr>
+        <td>á</td>
+        <td>&amp;aacute;</td>
+      </tr>
+      <tr>
+        <td>é</td>
+        <td>&amp;eacute;</td>
+      </tr>
+      <tr>
+        <td>í</td>
+        <td>&amp;iacute;</td>
+      </tr>
+      <tr>
+        <td>ó</td>
+        <td>&amp;oacute;</td>
+      </tr>
+      <tr>
+        <td>ú</td>
+        <td>&amp;uacute;</td>
+      </tr>
+    </table>
+
+    <h1>¿Qué son los comentarios en HTML?</h1>
+    <p>
+      Los comentarios son text que escribes destro del código pero NO se
+      muestran en la página web.
+    </p>
+    <p>Sirven para:</p>
+    <ul>
+      <li>Explicar partes del código</li>
+      <li>Dejar notas para ti o para otros desarrolladores</li>
+      <li>Desactivar temporalmente código sin borrarlo</li>
+      <li>Trabajar en equipo</li>
+    </ul>
+    <h2>¿Cómo se escribe un comentario?</h2>
+    <pre>
+      <code>
+        &lt;!-- Este es un comentario --&gt;
+      </code>
+    </pre>
+    <p>Comentarios de varias líneas:</p>
+    <pre>
+      <code>
+        &lt;!--
+          Este es un comentario
+          de varias líneas
+        --&gt;
+      </code>
+    </pre>
   </body>
 </html>
