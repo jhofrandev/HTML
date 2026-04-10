@@ -55,11 +55,58 @@
 
     <h1>Etiqueta &lt;head&gt;</h1>
     <p>
-      La etiqueta <code>&lt;head&gt;</code> es ek centro de control 🧠 de tu
-      página web. A diferencia del cuerpo, donde colocamos todo lo que el
-      usaurio ve, el <code>&lt;head&gt;</code> contiene información técnica que
-      el navegador y los buscadores necesitan para entender y mostrar tu sitio
-      correctamente.
+      Es la cabecera de tu página web. Contiene información sobre el documento
+      HTML, pero esa información NO se muestra en la página
+    </p>
+    <p>Es decir:</p>
+    <p>
+      El &lt;head&gt; contiene metadatos (información sobre la página) como su
+      título, enlaces a estilos, scripts, etc.
+    </p>
+    <p>
+      El contenido del &lt;head&gt; no es visible para los usuarios, pero es
+      crucial para el funcionamiento correcto de la página.
+    </p>
+
+    <h1>¿Qué son las etiquetas meta en HTML?</h1>
+    <p>
+      Son etiquetas HTML que proporcionan información sobre la página web. Esta
+      etiqueta se coloca dentro del &lt;head&gt; y no es visible para los
+      usuarios.
+    </p>
+    <h2>🎯 ¿Para qué sirven?</h2>
+    <p>Las etiquetas <code>&lt;meta&gt;</code> ayudan a:</p>
+    <p>✅ Mostrar bien el texto (acentos, ñ, etc.)</p>
+    <p>✅ Hacer la página responsive en el celular</p>
+    <p>✅ Describir tu página en Google</p>
+    <p>✅ Decir quién es el autor</p>
+    <p>✅ Controlar si Google indexa tu página</p>
+    <p>✅ Configurar idioma o codificación</p>
+    <p>Ejemplo completo:</p>
+    <pre>
+      <code>
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="es"&gt;
+          &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;meta name="description" content="Una página de ejemplo para aprender HTML"&gt;
+            &lt;meta name="author" content="Tu Nombre"&gt;
+            &lt;title&gt;Mi Página de Ejemplo&lt;/title&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+            ...
+          &lt;/body&gt;
+        &lt;/html&gt;
+      </code>
+    </pre>
+
+    <h1>¿Qué es la etiqueta &lt;body&gt;?</h1>
+    <p>
+      La etiqueta <code>&lt;body&gt;</code> es el contenedor principal del
+      contenido visible de una página web. Todo lo que quieras mostrar a los
+      usuarios, como texto, imágenes, videos, enlaces, etc., debe estar dentro
+      de esta etiqueta.
     </p>
   </body>
 </html>
