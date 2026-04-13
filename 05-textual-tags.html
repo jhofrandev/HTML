@@ -144,5 +144,461 @@
     </pre>
     <p>Resultado:</p>
     <p>Hola<br />Mundo</p>
+
+    <h1>🅱️ &lt;b&gt; vs 💪 &lt;strong&gt;</h1>
+    <p>
+      Aunque ambas muestran texto en negrita, la etiqueta
+      <code>&lt;b&gt;</code> se utiliza para resaltar texto visualmente sin
+      transmitir importancia adicional. Mientras que la etiqueta
+      <code>&lt;strong&gt;</code> define texto con fuerte importancia o enfasis
+      dentro del documento.
+    </p>
+    <p>
+      Recordar que en HTML existe algo llamado semantica, que quiere dcir esto,
+      pues que el contenido tiene un significado o deberia de tenerlo y no es
+      solo contenido visual y la etiqueta <strong>strong</strong> tiene
+      importancia semantica mientra que <b>b</b> no.
+    </p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;p&gt;El &lt;b&gt;Chocolate&lt;/b&gt; es delicioso.&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;No olvides guardar tu trabajo.&lt;/strong&gt;&lt;/p&gt;
+      </code>
+    </pre>
+    <p>
+      Es importante tener claro el tema de la semantica de las etiquetas ya que
+      esto ayuda a Google a entender mejor tu contenido, igual que a los
+      lectores de pantalla y sin duda mejora el SEO y accesibilidad de la pagina
+    </p>
+
+    <h1>🧾 La etiqueta &lt;pre&gt;</h1>
+    <p>
+      El elemento &lt;pre&gt; representa texto que debe mostrarse exactamente
+      como esta escrito en el archivo HTML.
+    </p>
+    <h2>Que significa "preformateado"</h2>
+    <p>❌ HTML elimina los espacios extras</p>
+    <p>❌ HTML elimina los saltos de linea</p>
+    <p>✔️ &lt;pre&gt; conserva los espacios</p>
+    <p>✔️ &lt;pre&gt; conserva las tabulaciones</p>
+    <p>✔️ &lt;pre&gt; conserva los saltos de linea</p>
+    <p>✔️ &lt;pre&gt; conserva las sangrias</p>
+    <p>✔️ &lt;pre&gt; conserva el formato original</p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;pre&gt;
+          function saludar() {
+            console.log('Hola mundo')
+          }
+        &lt;/pre&gt;
+      </code>
+    </pre>
+    <h2>💻 Para que se usa?</h2>
+    <ul>
+      <li>✅ Mostrar codigo</li>
+      <li>✅ Mostrar poemas</li>
+      <li>✅ Mostrar direcciones</li>
+      <li>✅ ASCII Art</li>
+      <li>✅ Texto estructurado</li>
+      <li>✅ Tablas de texto</li>
+    </ul>
+
+    <h1>✍️ &lt;i&gt; vs 🗣️ &lt;em&gt;</h1>
+    <p>
+      Tanto &lt;i&gt; como &lt;em&gt; muestran texto en cursiva, pero tienen
+      propositos diferentes.
+    </p>
+    <p>
+      &lt;i&gt; se utiliza para mostrar texto en cursiva sin añadir enfasis
+      semantica, por ejemplo:
+    </p>
+    <ul>
+      <li>Esta en otro idioma</li>
+      <li>Es un pensamiento</li>
+      <li>Es un termino tecnico</li>
+      <li>Es un nombre cientifico</li>
+      <li>tiene otra voz o tono</li>
+    </ul>
+    <p>
+      &lt;em&gt; marca texto que tiene enfasis dentro del contenido y est
+      permite que:
+    </p>
+    <ul>
+      <li>Le da importancia</li>
+      <li>Cambiar el significado de la oracion</li>
+      <li>Mejorar la accesibilidad</li>
+      <li>Mejorar comprension</li>
+      <li>Mejorar SEO indirectamente</li>
+    </ul>
+
+    <h1>🟨 &lt;mark&gt;</h1>
+    <p>
+      La etiqueta <code>&lt;mark&gt;</code> se utiliza para definir texto
+      resaltado o marcado dentro de un documento.
+    </p>
+    <p>Se puede usar para:</p>
+    <ul>
+      <li>✅ Destacar indonrmacion importante</li>
+      <li>✅ Resaltar palabras clave</li>
+      <li>✅ Marcar resultados de busqueda</li>
+      <li>✅ Llamar la atencion del lector</li>
+      <li>✅ Notas importantes</li>
+      <li>✅ Mensajes destacados</li>
+    </ul>
+    <p>
+      Marcar la diferencia con b y strong. mientra que b es solo negrita y
+      strong es marca importancia, mark es mas resaltado visual.
+    </p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;p&gt;El &lt;mark&gt;Chocolate&lt;/mark&gt; es delicioso.&lt;/p&gt;
+      </code>
+    </pre>
+    <p>resultado:</p>
+    <p>El <mark>Chocolate</mark> es delicioso.</p>
+
+    <h1>🔽 &lt;sub&gt; y 🔼 &lt;sup&gt;</h1>
+    <p>Vamos con dos etiquetas muy usadas en matematicas, quimica y notas</p>
+    <h2>🔼 Etiqueta &lt;sup&gt; (Superescrito)</h2>
+    <p>
+      El elemento <code>&lt;sup&gt;</code> muestra texto mas alto que la linea
+      normal, generamente en tamaño mas pequeño.
+    </p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;p&gt;x&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+      </code>
+    </pre>
+    <p>Resultado:</p>
+    <p>x<sup>2</sup></p>
+    <h2>Donde se usa?</h2>
+    <ul>
+      <li>Potencias matematicas -> x<sup>2</sup></li>
+      <li>Notas al pie -> texto<sup>1</sup></li>
+      <li>Numeross ordinales -> 1<sup>o</sup>, 2<sup>o</sup>, 3<sup>o</sup></li>
+      <li>Unidades de medida -> m<sup>2</sup>, km<sup>2</sup></li>
+    </ul>
+    <h2>🔼 Etiqueta &lt;sub&gt; (Subescrito)</h2>
+    <p>
+      El elemento <code>&lt;sub&gt;</code> muestra texto mas bajo que la linea
+      normal, generamente en tamaño mas pequeño.
+    </p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;
+      </code>
+    </pre>
+    <p>Resultado:</p>
+    <p>H<sub>2</sub>O</p>
+    <h2>Donde se usa?</h2>
+    <ul>
+      <li>Formulas quimicas -> CO<sub>2</sub></li>
+      <li>Variables matematicas -> x<sub>1</sub></li>
+      <li>Indices -> A<sub>1</sub></li>
+      <li>Notaciones tecnicas</li>
+    </ul>
+
+    <h1>🔤 &lt;small&gt;</h1>
+    <p>
+      La etiqueta <code>&lt;small&gt;</code> se utiliza para definir texto mas
+      pequeño que el texto normal.
+    </p>
+    <p>Se puede usar para:</p>
+    <ul>
+      <li>✅ Texto legal</li>
+      <li>✅ Notas al pie</li>
+      <li>✅ Copyright</li>
+      <li>✅ Avisos legales</li>
+      <li>✅ Texto pequeño</li>
+    </ul>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;p&gt;El &lt;small&gt;Chocolate&lt;/small&gt; es delicioso.&lt;/p&gt;
+      </code>
+    </pre>
+    <p>resultado:</p>
+    <p>El <small>Chocolate</small> es delicioso.</p>
+
+    <h1>🔗 Links (enlaces) en HTML</h1>
+    <p>
+      La etiqueta <code>&lt;a&gt;</code> (ancla) crea un enlace que permite ir
+      de una pagina a otra.
+    </p>
+    <h2>Que puede hacer un link?</h2>
+    <p>Un enlace puede llevarte a:</p>
+    <ul>
+      <li>✅ Otra página web</li>
+      <li>✅ Otra página del mismo sitio</li>
+      <li>✅ Una sección de la misma página</li>
+      <li>✅ Llamar a un numero de telefono</li>
+      <li>✅ Enviar un correo electrónico</li>
+      <li>✅ Descargar un archivo</li>
+      <li>✅ Abrir una imagen</li>
+      <li>✅ Abrir un video</li>
+      <li>✅ Abrir un documento</li>
+      <li>✅ Abrir una aplicacion</li>
+    </ul>
+    <h2>Sintaxis basica</h2>
+    <pre>
+      <code>
+        &lt;a href="https://www.google.com"&gt;Ir a Google&lt;/a&gt;
+      </code>
+    </pre>
+    <h2>Tipos de enlaces</h2>
+    <p>Existen varios tipos de enlaces:</p>
+    <ul>
+      <li>🌍 1. Enlace externo</li>
+      <pre>
+        <code>
+          &lt;a href="https://www.youtube.com"&gt;Youtube&lt;/a&gt;
+        </code>
+      </pre>
+      <li>📄 2. Enlace interno</li>
+      <pre>
+        <code>
+          &lt;a href="contacto.html"&gt;Contacto&lt;/a&gt;
+        </code>
+      </pre>
+      <li>📍 3. Enlace dentro de la misma página</li>
+      <pre>
+        <code>
+          &lt;a href="#info"&gt;Ver mas informacion&lt;/a&gt;
+          ...
+          &lt;h2 id="info"&gt;Informacion&lt;/h2&gt;
+        </code>
+      </pre>
+      <li>📧 4. Enviar correo:</li>
+      <pre>
+        <code>
+          &lt;a href="mailto:correo@email.com"&gt;Enviar correo&lt;/a&gt;
+        </code>
+      </pre>
+      <li>📱 5. Llamar por teléfono:</li>
+      <pre>
+        <code>
+          &lt;a href="tel:+573001234567"&gt;Llamar ahora&lt;/a&gt;
+        </code>
+      </pre>
+    </ul>
+    <h2>⚙️ Atributos importantes</h2>
+    <p>🪟 Abrir en nueva pestaña:</p>
+    <pre>
+      <code>
+        &lt;a href="https://www.google.com" target="_blank"&gt;Ir a Google&lt;/a&gt;
+      </code>
+    </pre>
+    <p>💬 Texto emergente:</p>
+    <pre>
+      <code>
+        &lt;a href="https://www.google.com" title="Ir a Google"&gt;Ir a Google&lt;/a&gt;
+      </code>
+    </pre>
+    <p>Descargar archivo:</p>
+    <pre>
+      <code>
+        &lt;a href="archivo.pdf" download&gt;Descargar archivo&lt;/a&gt;
+      </code>
+    </pre>
+    <h2>🖼️ Imagen como enlace</h2>
+    <pre>
+      <code>
+        &lt;a href="https://www.google.com"&gt;
+          &lt;img src="imagen.jpg" alt="Imagen"&gt;
+        &lt;/a&gt;
+      </code>
+    </pre>
+
+    <h1>🔤 &lt;del&gt; y &lt;ins&gt;</h1>
+    <p>
+      La etiqueta <code>&lt;del&gt;</code> se utiliza para definir texto que ha
+      sido eliminado del documento.
+    </p>
+    <p>
+      La etiqueta <code>&lt;ins&gt;</code> se utiliza para definir texto que ha
+      sido insertado en el documento.
+    </p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;p&gt;Precio: &lt;del&gt;$10&lt;/del&gt; $5&lt;/p&gt;
+      </code>
+    </pre>
+    <p>Resultado:</p>
+    <p>Precio: <del>$10</del> $5</p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;p&gt;Ahora cuesta &lt;ins&gt;$10&lt;/ins&gt;&lt;/p&gt;
+      </code>
+    </pre>
+    <p>Resultado:</p>
+    <p>Ahora cuesta <ins>$10</ins></p>
+
+    <h1>🔤 &lt;u&gt;</h1>
+    <p>
+      La etiqueta <code>&lt;u&gt;</code> se utiliza para definir texto que ha
+      sido subrayado.
+    </p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;p&gt;El &lt;u&gt;Chocolate&lt;/u&gt; es delicioso.&lt;/p&gt;
+      </code>
+    </pre>
+    <p>Resultado:</p>
+    <p>El <u>Chocolate</u> es delicioso.</p>
+    <p>
+      <strong>Nota:</strong> Se recomienda usar &lt;ins&gt; en lugar de
+      &lt;u&gt; para texto subrayado.
+    </p>
+
+    <h1>🔤 &lt;code&gt;</h1>
+    <p>
+      La etiqueta <code>&lt;code&gt;</code> se utiliza para definir texto que ha
+      sido marcado como codigo de programacion.
+    </p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;p&gt;Usa  &lt;code&gt;console.log()&lt;/code&gt; para mostrar mensajes en la consola.&lt;/p&gt;
+      </code>
+    </pre>
+    <p>Resultado:</p>
+    <p>Usa <code>console.log()</code> para mostrar mensajes en la consola.</p>
+
+    <h1>🔤 &lt;kbd&gt;</h1>
+    <p>
+      La etiqueta <code>&lt;kbd&gt;</code> se utiliza para definir texto que ha
+      sido marcado como entrada de teclado.
+    </p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;p&gt;Usa  &lt;kbd&gt;Ctrl + C&lt;/kbd&gt; para copiar.&lt;/p&gt;
+      </code>
+    </pre>
+    <p>Resultado:</p>
+    <p>Usa <kbd>Ctrl + C</kbd> para copiar.</p>
+
+    <h1>🔤 &lt;samp&gt;</h1>
+    <p>
+      La etiqueta <code>&lt;samp&gt;</code> se utiliza para definir texto que ha
+      sido marcado como salida de un programa.
+    </p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;p&gt;El sistema devolvio el mensaje: &lt;samp&gt;Error 404&lt;/samp&gt;.&lt;/p&gt;
+      </code>
+    </pre>
+    <p>Resultado:</p>
+    <p>El sistema devolvio el mensaje: <samp>Error 404</samp>.</p>
+
+    <h1>🔤 &lt;var&gt;</h1>
+    <p>
+      La etiqueta <code>&lt;var&gt;</code> se utiliza para definir texto que ha
+      sido marcado como una variable.
+    </p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;p&gt;La formula es: &lt;var&gt;y = mx + b&lt;/var&gt;.&lt;/p&gt;
+      </code>
+    </pre>
+    <p>Resultado:</p>
+    <p>La formula es: <var>y = mx + b</var>.</p>
+
+    <h1>🔤 &lt;cite&gt;</h1>
+    <p>
+      La etiqueta <code>&lt;cite&gt;</code> se utiliza para definir texto que ha
+      sido marcado como el titulo de una obra.
+    </p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;p&gt;El libro se llama: &lt;cite&gt;Cien años de soledad&lt;/cite&gt;.&lt;/p&gt;
+      </code>
+    </pre>
+    <p>Resultado:</p>
+    <p>El libro se llama: <cite>Cien años de soledad</cite>.</p>
+
+    <h1>🔤 &lt;q&gt;</h1>
+    <p>
+      La etiqueta <code>&lt;q&gt;</code> se utiliza para definir texto que ha
+      sido marcado como una cita corta.
+    </p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;p&gt;El dijo: &lt;q&gt;Hola&lt;/q&gt;.&lt;/p&gt;
+      </code>
+    </pre>
+    <p>Resultado:</p>
+    <p>El dijo: <q>Hola</q>.</p>
+
+    <h1>🔤 &lt;abbr&gt;</h1>
+    <p>
+      La etiqueta <code>&lt;abbr&gt;</code> se utiliza para definir texto que ha
+      sido marcado como una abreviatura.
+    </p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;p&gt;La abreviatura de &lt;abbr title="Organizacion de las Naciones Unidas"&gt;ONU&lt;/abbr&gt; es &lt;abbr title="Organizacion de las Naciones Unidas"&gt;ONU&lt;/abbr&gt;.&lt;/p&gt;
+      </code>
+    </pre>
+    <p>Resultado:</p>
+    <p>
+      La abreviatura de
+      <abbr title="Organizacion de las Naciones Unidas">ONU</abbr> es
+      <abbr title="Organizacion de las Naciones Unidas">ONU</abbr>.
+    </p>
+
+    <h1>🔤 &lt;dfn&gt;</h1>
+    <p>
+      La etiqueta <code>&lt;dfn&gt;</code> se utiliza para definir texto que ha
+      sido marcado como una definicion.
+    </p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;p&gt;La definicion de &lt;dfn&gt;HTML&lt;/dfn&gt; es &lt;dfn&gt;HyperText Markup Language&lt;/dfn&gt;.&lt;/p&gt;
+      </code>
+    </pre>
+    <p>Resultado:</p>
+    <p>
+      La definicion de <dfn>HTML</dfn> es <dfn>HyperText Markup Language</dfn>.
+    </p>
+
+    <h1>🔤 &lt;time&gt;</h1>
+    <p>
+      La etiqueta <code>&lt;time&gt;</code> se utiliza para definir texto que ha
+      sido marcado como una fecha u hora.
+    </p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;p&gt;La fecha es: &lt;time datetime="2022-01-01"&gt;1 de enero de 2022&lt;/time&gt;.&lt;/p&gt;
+      </code>
+    </pre>
+    <p>Resultado:</p>
+    <p>La fecha es: <time datetime="2022-01-01">1 de enero de 2022</time>.</p>
+
+    <h1>🔤 &lt;span&gt;</h1>
+    <p>es un contenedor genérico de texto sin significado semántico.</p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;p&gt;El texto es: &lt;span&gt;Hola&lt;/span&gt;.&lt;/p&gt;
+      </code>
+    </pre>
+    <p>Resultado:</p>
+    <p>El texto es: <span>Hola</span>.</p>
   </body>
 </html>
