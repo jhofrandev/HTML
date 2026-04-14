@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listas y Tipos de Contenido</title>
+  </head>
+  <body>
+    <h1>📋 List & Types en HTML</h1>
+    <p>
+      HTML tiene un conjunto de elementos que permiten definir diferentes tipos
+      de listas: unordered, ordered y description list, lo que te puede servir
+      para:
+    </p>
+    <p>👉 Organizar informacion</p>
+    <p>👉 Agrupar elementos relacionados</p>
+    <p>👉 Mostrar secuencias</p>
+    <p>👉 Crear menus</p>
+    <p>👉 Mostrar definiciones</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Tipo</th>
+          <th>Elemento</th>
+          <th>Descripcion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Unordered List</td>
+          <td>ul</td>
+          <td>Lista no ordenada</td>
+        </tr>
+        <tr>
+          <td>Ordered List</td>
+          <td>ol</td>
+          <td>Lista ordenada</td>
+        </tr>
+        <tr>
+          <td>Description List</td>
+          <td>dl</td>
+          <td>Lista de definiciones</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>🔘 1. Unordered List (Lista Desordenada)</h2>
+    <p>
+      Una lista desordenada comenza con la etiqueta
+      <code>&lt;ul&gt;</code> y cada elemento de la lista se define con la
+      etiqueta <code>&lt;li&gt;</code>
+    </p>
+    <p>Se usa cuando el orden no importa:</p>
+    <ul>
+      <li>Lista de compra</li>
+      <li>Nombres</li>
+      <li>Categorias</li>
+    </ul>
+    <p>Ejemplo:</p>
+    <ul>
+      <li>Leche</li>
+      <li>Pan</li>
+      <li>Huevos</li>
+    </ul>
+    <h3>Sintaxis</h3>
+    <pre>
+      <code>
+        &lt;ul&gt;
+          &lt;li&gt;Elemento 1&lt;/li&gt;
+          &lt;li&gt;Elemento 2&lt;/li&gt;
+          &lt;li&gt;Elemento 3&lt;/li&gt;
+        &lt;/ul&gt;
+      </code>
+    </pre>
+    <h2>🔢 2. Ordered List (Lista Ordenada)</h2>
+    <p>
+      Una lista ordenada comenza con la etiqueta
+      <code>&lt;ol&gt;</code> y cada elemento de la lista se define con la
+      etiqueta <code>&lt;li&gt;</code>
+    </p>
+    <p>Se usa cuando el orden importa:</p>
+    <ol>
+      <li>Pasos de una receta</li>
+      <li>Instrucciones</li>
+      <li>Secuencias</li>
+    </ol>
+    <p>Ejemplo:</p>
+    <ol>
+      <li>Precalentar horno a 180°C</li>
+      <li>Mezclar ingredientes secos</li>
+      <li>Agregar ingredientes humedos</li>
+      <li>Hornear por 30 minutos</li>
+    </ol>
+    <h3>Sintaxis</h3>
+    <pre>
+      <code>
+        &lt;ol&gt;
+          &lt;li&gt;Elemento 1&lt;/li&gt;
+          &lt;li&gt;Elemento 2&lt;/li&gt;
+          &lt;li&gt;Elemento 3&lt;/li&gt;
+        &lt;/ol&gt;
+      </code>
+    </pre>
+    <h3>Atributos de Ordered List</h3>
+    <p>La etiqueta <code>&lt;ol&gt;</code> tiene los siguientes atributos:</p>
+    <ul>
+      <li>
+        <code>type</code>: Define el tipo de numeracion
+        <ul>
+          <li><code>1</code>: Numeros (default)</li>
+          <li><code>a</code>: Letras minusculas</li>
+          <li><code>A</code>: Letras mayusculas</li>
+          <li><code>i</code>: Romanos minusculas</li>
+          <li><code>I</code>: Romanos mayusculas</li>
+        </ul>
+      </li>
+      <li>
+        <code>start</code>: Define el numero de inicio
+        <ul>
+          <li><code>1</code>: Empieza en 1 (default)</li>
+          <li><code>2</code>: Empieza en 2</li>
+          <li><code>3</code>: Empieza en 3</li>
+        </ul>
+      </li>
+    </ul>
+    <h3>Ejemplos</h3>
+    <pre>
+      <code>
+        &lt;ol type="a"&gt;
+          &lt;li&gt;Elemento 1&lt;/li&gt;
+          &lt;li&gt;Elemento 2&lt;/li&gt;
+          &lt;li&gt;Elemento 3&lt;/li&gt;
+        &lt;/ol&gt;
+      </code>
+    </pre>
+    <h2>📖 3. Description List (Lista de Definiciones)</h2>
+    <p>
+      Una lista de definiciones comenza con la etiqueta
+      <code>&lt;dl&gt;</code> y cada elemento de la lista se define con la
+      etiqueta <code>&lt;li&gt;</code>
+    </p>
+    <p>Se usa cuando el orden importa:</p>
+    <dl>
+      <dt>Termino 1</dt>
+      <dd>Definicion 1</dd>
+      <dt>Termino 2</dt>
+      <dd>Definicion 2</dd>
+      <dt>Termino 3</dt>
+      <dd>Definicion 3</dd>
+    </dl>
+    <p>Ejemplo:</p>
+    <dl>
+      <dt>HTML</dt>
+      <dd>HyperText Markup Language</dd>
+      <dt>CSS</dt>
+      <dd>Cascading Style Sheets</dd>
+      <dt>JavaScript</dt>
+      <dd>JavaScript</dd>
+    </dl>
+    <h3>Sintaxis</h3>
+    <pre>
+      <code>
+        &lt;dl&gt;
+          &lt;dt&gt;Termino 1&lt;/dt&gt;
+          &lt;dd&gt;Definicion 1&lt;/dd&gt;
+          &lt;dt&gt;Termino 2&lt;/dt&gt;
+          &lt;dd&gt;Definicion 2&lt;/dd&gt;
+          &lt;dt&gt;Termino 3&lt;/dt&gt;
+          &lt;dd&gt;Definicion 3&lt;/dd&gt;
+        &lt;/dl&gt;
+      </code>
+    </pre>
+    <h2>🧬 4. Nested List (Lista Anidada)</h2>
+    <p>
+      Una lista anidada es una lista dentro de otra lista. Se usa cuando se
+      quiere mostrar una jerarquia de elementos.
+    </p>
+    <p>Ejemplo:</p>
+    <ul>
+      <li>
+        Frutas
+        <ul>
+          <li>Manzana</li>
+          <li>Banana</li>
+          <li>Naranja</li>
+        </ul>
+      </li>
+      <li>Verduras</li>
+      <li>Carnes</li>
+    </ul>
+  </body>
+</html>

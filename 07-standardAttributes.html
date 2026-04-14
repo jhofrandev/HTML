@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Attributes</title>
+  </head>
+  <body>
+    <h1>🌍 Que son los Global Attributes?</h1>
+    <p>
+      Los atributos globales pueden utilizarse en cualquier elemento HTML para
+      mejorar comportamiento, estilo o accesibilidad.
+    </p>
+    <h2>Sintaxis de un atributo</h2>
+    <pre>
+      <code>
+        &lt;elemento atributo="valor"&gt;Contenido&lt;/elemento&gt;
+      </code>
+    </pre>
+    <p>
+      <strong>Nota:</strong> Los atributos siempre se escriben en minúsculas y
+      los valores deben ir entre comillas dobles o simples.
+    </p>
+    <h2>🔑 Atributos Globales mas importantes</h2>
+    <h3>🆔 1. id</h3>
+    <p>El atributo id define un identificador unico dentro del documento.</p>
+    <pre>
+      <code>
+        &lt;div id="mi-id"&gt;Contenido&lt;/div&gt;
+      </code>
+    </pre>
+    <h3>🧱 2. class</h3>
+    <p>
+      Class asigna uno o mas nombres clase para aplicar estilos o manipulacion
+      con javascript
+    </p>
+    <pre>
+      <code>
+        &lt;div class="clase1 clase2"&gt;Contenido&lt;/div&gt;
+      </code>
+    </pre>
+    <h3>🎨 3. style</h3>
+    <p>Style permite aplicar estilos CSS en linea.</p>
+    <pre>
+      <code>
+        &lt;div style="color: blue;"&gt;Contenido&lt;/div&gt;
+      </code>
+    </pre>
+    <h3>🧠 4. data-* (Custom Data Attributes)</h3>
+    <p>data-* permite almacenar datos personalizados dentro de HTML.</p>
+    <pre>
+      <code>
+        &lt;div data-id="123" data-nombre="Juan"&gt;Contenido&lt;/div&gt;
+      </code>
+    </pre>
+    <h3>💬 5. title</h3>
+    <p>
+      Title proporciona informacion adicional sobre un elemento. Se muestra como
+      tooltip cuando el usuario pasa el mouse sobre el elemento.
+    </p>
+    <pre>
+      <code>
+        &lt;img src="imagen.jpg" alt="Descripcion" title="Titulo de la imagen"&gt;
+      </code>
+    </pre>
+    <h3>🌐 6. lang</h3>
+    <p>
+      Lang especifica el idioma del contenido del elemento. Es importante para
+      la accesibilidad y SEO.
+    </p>
+    <pre>
+      <code>
+        &lt;p lang="es"&gt;Este texto esta en español.&lt;/p&gt;
+      </code>
+    </pre>
+    <h3>↔️ 7. dir</h3>
+    <p>
+      Dir especifica la direccion del texto. Puede ser "ltr" (izquierda a
+      derecha) o "rtl" (derecha a izquierda).
+    </p>
+    <pre>
+      <code>
+        &lt;p dir="rtl"&gt;Este texto esta en arabe.&lt;/p&gt;
+      </code>
+    </pre>
+    <h3>👁️ 8. hidden</h3>
+    <p>
+      Hidden indica que el elemento no es visible para el usuario. Se usa para
+      ocultar elementos condicionalmente.
+    </p>
+    <pre>
+      <code>
+        &lt;div hidden&gt;Este elemento esta oculto.&lt;/div&gt;
+      </code>
+    </pre>
+    <h3>🖱️ 9. draggable</h3>
+    <p>
+      Draggable indica si un elemento puede ser arrastrado. Puede ser "true" o
+      "false".
+    </p>
+    <pre>
+      <code>
+        &lt;div draggable="true"&gt;Este elemento puede ser arrastrado.&lt;/div&gt;
+      </code>
+    </pre>
+    <h3>🧑‍💻 10. contenteditable</h3>
+    <p>
+      Contenteditable indica si el contenido de un elemento puede ser editado
+      por el usuario. Puede ser "true" o "false".
+    </p>
+    <pre>
+      <code>
+        &lt;div contenteditable="true"&gt;Este elemento puede ser editado.&lt;/div&gt;
+      </code>
+    </pre>
+    <h3>📇 11. tabindex</h3>
+    <p>
+      Tabindex indica el orden en que los elementos deben ser enfocados cuando
+      el usuario presiona la tecla Tab. Puede ser un numero entero positivo o
+      negativo.
+    </p>
+    <pre>
+      <code>
+        &lt;div tabindex="1"&gt;Este elemento sera enfocado primero.&lt;/div&gt;
+      </code>
+    </pre>
+  </body>
+</html>
