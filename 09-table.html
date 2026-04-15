@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tablas</title>
+  </head>
+  <body>
+    <h1>📊 Tablas en HTML</h1>
+    <p>
+      El elemento tabla <code>&lt;table&gt;</code> representa datos tabulares
+      organizados en filas y columnas, las tablas se usan para:
+    </p>
+    <ul>
+      <li>Horarios</li>
+      <li>Estadisticas</li>
+      <li>Listas de productos</li>
+      <li>Calificaciones</li>
+      <li>Reportes</li>
+    </ul>
+    <h2>🧠 Como funciona una tabla?</h2>
+    <p>
+      Una tabla es un conjunto estructurado de datos formado por filas y
+      columnas, donde las intersecciones crean celdas
+    </p>
+    <h2>Estructura basica de una tabla</h2>
+    <p>Los elementos principales de una tabla son:</p>
+    <ul>
+      <li><code>&lt;table&gt;</code>: Define la tabla</li>
+      <li><code>&lt;tr&gt;</code>: Define una fila</li>
+      <li><code>&lt;td&gt;</code>: Define una celda</li>
+      <li><code>&lt;th&gt;</code>: Define un encabezado</li>
+    </ul>
+    <h2>Ejemplo de tabla basica</h2>
+    <table>
+      <tr>
+        <td>Nombre</td>
+        <td>Edad</td>
+        <td>Ciudad</td>
+      </tr>
+      <tr>
+        <td>Juan</td>
+        <td>25</td>
+        <td>Lima</td>
+      </tr>
+      <tr>
+        <td>Maria</td>
+        <td>22</td>
+        <td>Bogota</td>
+      </tr>
+    </table>
+    <h2>Estructura semantica avanzada</h2>
+    <p>
+      La estructura semantica de una tabla permite organizar mejor los datos y
+      mejorar la accesibilidad
+    </p>
+    <ul>
+      <li><code>&lt;thead&gt;</code>: Define el encabezado de la tabla</li>
+      <li><code>&lt;tbody&gt;</code>: Define el cuerpo de la tabla</li>
+      <li><code>&lt;tfoot&gt;</code>: Define el pie de la tabla</li>
+    </ul>
+    <h2>Ejemplo de tabla semantica</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Ciudad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Juan</td>
+          <td>25</td>
+          <td>Lima</td>
+        </tr>
+        <tr>
+          <td>Maria</td>
+          <td>22</td>
+          <td>Bogota</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Total</td>
+          <td>2</td>
+          <td>2</td>
+        </tr>
+      </tfoot>
+    </table>
+    <h2>Combinacion de celdas</h2>
+    <p>Las celdas se pueden combinar usando los atributos:</p>
+    <ul>
+      <li><code>colspan</code>: Combina celdas horizontalmente</li>
+      <li><code>rowspan</code>: Combina celdas verticalmente</li>
+    </ul>
+    <p>Ejemplos:</p>
+    <table>
+      <tr>
+        <td colspan="2">Total</td>
+      </tr>
+      <tr>
+        <td>Juan</td>
+        <td>25</td>
+      </tr>
+      <tr>
+        <td>Maria</td>
+        <td>22</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td rowspan="2">Total</td>
+      </tr>
+      <tr>
+        <td>Juan</td>
+        <td>25</td>
+      </tr>
+      <tr>
+        <td>Maria</td>
+        <td>22</td>
+      </tr>
+    </table>
+    <h2>Titulo de la tabla</h2>
+    <p>El elemento <code>&lt;caption&gt;</code> define el titulo de la tabla</p>
+    <table>
+      <caption>
+        Titulo de la tabla
+      </caption>
+      <tr>
+        <th>Nombre<tth>
+        <th>Edad</th>
+        <th>Ciudad</th>
+      </tr>
+      <tr>
+        <td>Juan</td>
+        <td>25</td>
+        <td>Lima</td>
+      </tr>
+      <tr>
+        <td>Maria</td>
+        <td>22</td>
+        <td>Bogota</td>
+      </tr>
+    </table>
+    <h2>Agruoar columnas y filas</h2>
+    <p>
+      Los elementos <code>&lt;colgroup&gt;</code> y <code>&lt;col&gt;</code>
+      permiten agrupar columnas y aplicar estilos a grupos de columnas
+    </p>
+    <table>
+      <colgroup>
+        <col span="2" style="background-color: red" />
+        <col style="background-color: green" />
+      </colgroup>
+      <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Ciudad</th>
+      </tr>
+      <tr>
+        <td>Juan</td>
+        <td>25</td>
+        <td>Lima</td>
+      </tr>
+      <tr>
+        <td>Maria</td>
+        <td>22</td>
+        <td>Bogota</td>
+      </tr>
+    </table>
+  </body>
+</html>
