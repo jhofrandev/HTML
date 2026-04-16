@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Embedding Media</title>
+  </head>
+  <body>
+    <h1>El elemento &lt;img&gt;</h1>
+    <p>
+      El elemento &lt;img&gt; se usa para incrustar imagenes en documentos HTML
+    </p>
+    <h2>Sisntaxis minima correcta</h2>
+    <pre>
+      <code>
+        &lt;img src="ruta/a/la/imagen.jpg" alt="Descripción de la imagen"&gt;
+      </code>
+    </pre>
+    <p>
+      El atributo <code>&lt;alt&gt;</code> proporciona texto alternativos cuando
+      la imagen no puede mostrarse y es clave para accesibilidad.
+    </p>
+    <h2>Mejores paracticas para <code>&lt;img&gt;</code></h2>
+    <ul>
+      <li>
+        Siempre incluye el atributo <code>&lt;alt&gt;</code> con una descripción
+        concisa de la imagen.
+      </li>
+      <li>
+        Usa rutas relativas para las imágenes cuando sea posible. Esto hace que
+        el sitio sea más fácil de mantener.
+      </li>
+      <li>
+        Usa atributos <code>width</code> y <code>height</code> para especificar
+        las dimensiones de la imagen. Esto ayuda a prevenir cambios en el diseño
+        mientras la imagen se carga.
+      </li>
+    </ul>
+    <h2>Priority Hints en imagenes</h2>
+    <p>
+      Priority Hints (Fetch Priority) permiten indicar la prioridad relativa de
+      descarga de un recurso, sugiriendo al navegador sobre que recursos carga
+      antes o despues.
+    </p>
+    <h3>loading: cuando cargar</h3>
+    <h4>Valores:</h4>
+    <table>
+      <tr>
+        <th>Valor</th>
+        <th>Significado</th>
+      </tr>
+      <tr>
+        <td>lazy</td>
+        <td>La imagen se carga cuando se necesita</td>
+      </tr>
+      <tr>
+        <td>eager</td>
+        <td>La imagen se carga inmediatamente</td>
+      </tr>
+      <tr>
+        <td>(default)</td>
+        <td>El navegador decide cuando cargar la imagen</td>
+      </tr>
+    </table>
+    <pre>
+      <code>
+        &lt;img src="imagen.jpg" alt="Descripción" loading="lazy"&gt;
+      </code>
+    </pre>
+    <p>
+      El atributo <code>&lt;loading&gt;</code> controla el comportamiento de
+      carga (lazy/eager)
+    </p>
+    <h3>fetchpriority: prioridad de descarga</h3>
+    <h4>Valores:</h4>
+    <table>
+      <tr>
+        <th>Valor</th>
+        <th>Significado</th>
+      </tr>
+      <tr>
+        <td>high</td>
+        <td>Indica que el recurso es prioritario</td>
+      </tr>
+      <tr>
+        <td>low</td>
+        <td>Indica que el recurso no es prioritario</td>
+      </tr>
+      <tr>
+        <td>(default)</td>
+        <td>El navegador decide cuando cargar la imagen</td>
+      </tr>
+    </table>
+    <pre>
+      <code>
+        &lt;img src="imagen.jpg" alt="Descripción" fetchpriority="high"&gt;
+      </code>
+    </pre>
+    <p>
+      El atributo <code>&lt;fetchpriority&gt;</code> indica al navegador cómo
+      priorizar la descarga de un recurso.
+    </p>
+    <h3>&lt;img&gt; vs &lt;figure&gt;</h3>
+    <p>
+      El elemento <code>&lt;img&gt;</code> es el medio básico para mostrar una
+      imagen sin contenido adicional
+    </p>
+    <p>
+      El elemento <code>&lt;figure&gt;</code> representa contenido autocontenido
+      que puede moverse sin afectar el flujo del documento
+    </p>
+    <pre>
+      <code>
+        &lt;figure&gt;
+          &lt;img src="imagen.jpg" alt="Descripción"&gt;
+          &lt;figcaption&gt;Descripción de la imagen&lt;/figcaption&gt;
+        &lt;/figure&gt;
+      </code>
+    </pre>
+    <p>
+      <code>&lt;figure&gt;</code> se usa para organizar semánticamente imágenes
+      con contexto, mientras <code>&lt;img&gt;</code> es solo el recurso visual.
+    </p>
+  </body>
+</html>
