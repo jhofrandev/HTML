@@ -121,5 +121,110 @@
       <code>&lt;figure&gt;</code> se usa para organizar semánticamente imágenes
       con contexto, mientras <code>&lt;img&gt;</code> es solo el recurso visual.
     </p>
+
+    <h1>🎧 &lt;audio&gt; - Incrustar audio</h1>
+    <h2>Ejemplo basico recomendado</h2>
+    <pre>
+      <code>
+        &lt;audio controls&gt;
+          &lt;source src="musica.mp3" type="audio/mpeg"&gt;
+          &lt;source src="musica.ogg" type="audio/ogg"&gt;
+          Tu navegador no soporta audio HTML.
+        &lt;/audio&gt;
+      </code>
+    </pre>
+    <p>✅ controls muestra controles (play, pause, volumen, etc</p>
+    <p>✅ &lt;source&gt; permite multiples formatos</p>
+    <p>✅ Texto fallback para navegadores antiguos</p>
+    <p>
+      el Navegador selecciona automaticamente el primer formato que puede
+      reproducir.
+    </p>
+    <h2>Atributos comunes de &lt;audio&gt;</h2>
+    <table>
+      <tr>
+        <th>Atributo</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>controls</td>
+        <td>Muestra controles de reproducción</td>
+      </tr>
+      <tr>
+        <td>autoplay</td>
+        <td>Reproduce automáticamente el audio</td>
+      </tr>
+      <tr>
+        <td>loop</td>
+        <td>Reproduce el audio en bucle</td>
+      </tr>
+      <tr>
+        <td>muted</td>
+        <td>Silencia el audio por defecto</td>
+      </tr>
+      <tr>
+        <td>preload</td>
+        <td>Indica cómo debe precargarse el audio</td>
+      </tr>
+    </table>
+
+    <h1>📹 &lt;video&gt; - Incrustar video</h1>
+    <h2>Ejemplo basico recomendado</h2>
+    <pre>
+      <code>
+
+        &lt;video controls width="640" height="360" poster="preview.jpg"&gt;
+          &lt;source src="video.mp4" type="video/mp4"&gt;
+          &lt;source src="video.webm" type="video/webm"&gt;
+          Tu navegador no soporta video HTML.
+        &lt;/video&gt;
+      </code>
+    </pre>
+    <p>✅ controls obligatorio para UX</p>
+    <p>✅ width / height evitan layout shift</p>
+    <p>✅ poster muestra imagen previa</p>
+    <p>
+      El atributo poster define una imagen que se muestra antes de reproducir el
+      video.
+    </p>
+    <h2>Atributos comunes de &lt;video&gt;</h2>
+    <table>
+      <tr>
+        <th>Atributo</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>controls</td>
+        <td>Muestra controles de reproducción</td>
+      </tr>
+      <tr>
+        <td>autoplay</td>
+        <td>Reproduce automáticamente el video</td>
+      </tr>
+      <tr>
+        <td>loop</td>
+        <td>Reproduce el video en bucle</td>
+      </tr>
+      <tr>
+        <td>muted</td>
+        <td>Silencia el video por defecto</td>
+      </tr>
+      <tr>
+        <td>poster</td>
+        <td>Indica la imagen que se muestra antes de reproducir el video</td>
+      </tr>
+      <tr>
+        <td>width</td>
+        <td>Ancho del video</td>
+      </tr>
+      <tr>
+        <td>height</td>
+        <td>Altura del video</td>
+      </tr>
+      <tr>
+        <td>playsinline</td>
+        <td>Evita fullscreen en móvil</td>
+      </tr>
+    </table>
   </body>
 </html>
