@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularios</title>
+  </head>
+  <body>
+    <h1>Uso de Formularios</h1>
+    <p>
+      Los formularios en HTML se utilizan para recopilar datos de los usaurios.
+      Proporcionan una forma para que los usuarios introduzcan información como
+      texto, contraseña y señecciones, y luego envíen esos datos a un servidor
+      para su procesamiento. Los formularios se creen utilizado el elemento, que
+      contiene varios elementos de entrada como y para definir los diferentes
+      campos de entrada del usuario.
+    </p>
+    <hr />
+
+    <h2>¿Qué es &lt;label&gt; y para qué sirve?</h2>
+    <p>
+      &lt;label&gt; es el texto/caption que describe un control de formulario
+      (como un input)
+    </p>
+    <h3>✅ ¿Por qué es tan importante?</h3>
+    <p>
+      Asociar correctamente un &lt;label&gt; con su contro trae ventajas claras:
+    </p>
+    <ul>
+      <li>
+        Accesibilidad: el lector de pantalla lee el label cuando el usaurio cea
+        en el input, ayudando a entender qué datos se debe ingresar.
+      </li>
+      <li>
+        Usabulidad: hacer clic/tocar el texto del label mueve el foco al input
+        (y en chackbox/radio lo activa), aumentando el "área clickeable", útl en
+        móvil.
+      </li>
+    </ul>
+    <hr />
+
+    <h2>🔗 Formas de asociar &lt;label&gt; con &lt;input&gt;</h2>
+    <p>
+      Hay dos formas correctas: asociación explícita (recomendada) e implícita.
+    </p>
+    <h3>A) Asociación explícita (recomendada): for + id</h3>
+    <p>
+      El for del &lt;label&gt; debe coincidir exactamente con el id del
+      &lt;input&gt;.
+    </p>
+    <pre>
+      <code>
+        &lt;label for="email"&gt;Correo&lt;/label&gt;
+        &lt;input id="email" name="email" type="email" autocomplete="email" required&gt;
+      </code>
+    </pre>
+    <ul>
+      <li>for="email" ⟷ id="email" (match exacto</li>
+      <li>El label queda programáticamente asociado y es clickeable.</li>
+    </ul>
+    <p>
+      📌 Nota: un &lt;label&gt; se asocia a un solo control, pero un control
+      puede tener múltiples labels apuntando al mismo id.
+    </p>
+
+    <h3>
+      B) Asociación implícita: anidar el &lt;input /&gt; dentro del
+      &lt;label&gt;
+    </h3>
+    <p>
+      Si metes el input adentro del label, no necesitas for/id para la
+      asociación (aunque el id sigue siendo útil para CSS/JS).
+    </p>
+    <pre>
+      <code>
+        &lt;label&gt;
+          Correo
+          &lt;input name="email" type="email" autocomplete="email" required&gt;
+        &lt;/label&gt;
+      </code>
+    </pre>
+    <hr />
+
+    <h2>⌨️ ¿Qué es &lt;input /&gt; y por qué es “tan grande” en HTML?</h2>
+    <p>
+      &lt;input&gt; crea controles interactivos para captar datos del usuario en
+      formularios, y cambia mucho según su atributo type. Si no defines type, el
+      valor por defecto es text.
+    </p>
+    <hr />
+
+    <h2>🧪 Tipos de &lt;input&gt; más comunes (y cuándo usarlos)</h2>
+    <p>
+      Elegir bien el type mejora UX (teclados correctos en móvil) y validación
+      nativa.
+    </p>
+    <p>Ejemplo mini varios tipos:</p>
+    <pre>
+      <code>
+        &lt;label for="user"&gt;Usuario&lt;/label&gt;
+        &lt;input id="user" name="user" type="text" autocomplete="username" required&gt;
+
+        &lt;label for="pass"&gt;Contraseña&lt;/label&gt;
+        &lt;input
+          id="pass"
+          name="pass"
+          type="password"
+          autocomplete="current-password"
+          required
+        &gt;
+
+        &lt;label for="age"&gt;Edad&lt;/label&gt;
+        &lt;input id="age" name="age" type="number" min="0" max="120"&gt;
+      </code>
+    </pre>
+    <p>
+      &lt;input&gt; soporta un montón de atributos (min/max,
+      minlength/maxlength, pattern, required, etc.).
+    </p>
+    <hr />
+
+    <h2>🧾 Atributos clave de inputs (los “de batalla”)</h2>
+    <h3>name (muy importante)</h3>
+    <p>
+      Es el nombre del campo que se envía al servidor (la “llave” del dato).
+      Esto es parte del modelo de &lt;input&gt; como control de formulario.
+    </p>
+    <h3>required</h3>
+    <p>Marca el campo como obligatorio.</p>
+    <h3>minlength / maxlength</h3>
+    <p>Controlan longitud mínima/máxima del valor.</p>
+    <h3>placeholder (ojo)</h3>
+    <p>
+      Es solo un hint visual, no sustituye al label (el placeholder desaparece
+      al escribir y no debe ser la única “etiqueta” del campo).
+    </p>
+    <p>Correcto:</p>
+    <pre>
+      <code>
+        &lt;label for="q"&gt;Buscar&lt;/label&gt;
+        &lt;input id="q" name="q" type="search" placeholder="Escribe tu búsqueda"&gt;
+      </code>
+    </pre>
+    <hr />
+
+    <h2>♿ Reglas de oro de accesibilidad (labels + inputs)</h2>
+    <ol>
+      <li>Cada control debe tener label asociado (explícito o implícito).</li>
+      <li>No dependas solo del placeholder como label.</li>
+      <li>
+        Si por diseño no quieres mostrar el label, puedes ocultarlo visualmente
+        pero mantenerlo en el código para tecnologías de asistencia (patrón
+        recomendado por W3C/WAI).
+      </li>
+    </ol>
+    <p>Ejemplo (label oculto visualmente, pero presente):</p>
+    <pre>
+      <code>
+        &lt;label for="search" class="visuallyhidden"&gt;Buscar&lt;/label&gt;
+        &lt;input id="search" name="search" type="search"&gt;
+        &lt;button type="submit"&gt;Buscar&lt;/button&gt;
+      </code>
+    </pre>
+    <hr />
+
+    <h2>✅ Plantilla “ideal” de un campo (lista para copiar)</h2>
+    <pre>
+      <code>
+        &lt;div class="field"&gt;
+          &lt;label for="email"&gt;Correo&lt;/label&gt;
+          &lt;input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            placeholder="tucorreo@ejemplo.com"
+          &gt;
+        &lt;/div&gt;
+      </code>
+    </pre>
+    <ul>
+      <li>Label asociado por for/id</li>
+      <li>Type correcto (email) y required</li>
+      <li>
+        autocomplete ayuda a UX (autorrelleno), y placeholder solo como apoyo
+        (no reemplazo).
+      </li>
+    </ul>
+    <hr />
+
+    <h2>🧩 El control: &lt;input type="file"&gt;</h2>
+    <p>
+      Un input con type="file" permite que el usuario seleccione uno o varios
+      archivos de su dispositivo. Luego esos archivos se pueden subir al
+      servidor enviando el formulario o manipularse con JavaScript usando la
+      File API.
+    </p>
+    <p>Ejemplo mínimo (1 archivo)</p>
+    <pre>
+      <code>
+        &lt;label for="cv"&gt;Sube tu CV&lt;/label&gt;
+        &lt;input id="cv" name="cv" type="file"&gt;
+      </code>
+    </pre>
+    <p>
+      Un &lt;label&gt; asociado mejora accesibilidad y usabilidad (el click/tap
+      en el texto enfoca el control).
+    </p>
+    <h3>🎛️ Atributos clave para subir archivos</h3>
+    <h4>A) accept (filtra tipos de archivo)</h4>
+    <p>
+      accept es una sugerencia al navegador para filtrar el selector de
+      archivos: extensiones (ej. .pdf) y/o MIME types (ej. image/jpeg).
+    </p>
+    <pre>
+      <code>
+        &lt;label for="foto"&gt;Foto de perfil (JPG/PNG)&lt;/label&gt;
+        &lt;input id="foto" name="foto" type="file" accept="image/png, image/jpeg"&gt;
+      </code>
+    </pre>
+    <mark>
+      ⚠️ Importante: no lo uses como validación real; el servidor debe validar
+      el archivo.
+    </mark>
+    <h4>B) multiple (seleccionar varios archivos)</h4>
+    <p>Si agregas multiple, el usuario puede seleccionar más de un archivo.</p>
+    <pre>
+      <code>
+        &lt;label for="docs"&gt;Adjuntar documentos&lt;/label&gt;
+        &lt;input id="docs" name="docs" type="file" multiple&gt;
+      </code>
+    </pre>
+    <h4>C) capture (móvil: cámara/micrófono)</h4>
+    <p>
+      Si accept indica imagen o video, capture puede sugerir usar la cámara
+      (frontal user o trasera environment).
+    </p>
+    <pre>
+      <code>
+        &lt;label for="evidencia"&gt;Tomar foto&lt;/label&gt;
+        &lt;input id="evidencia" name="evidencia" type="file" accept="image/*" capture="environment"&gt;
+      </code>
+    </pre>
+  </body>
+</html>

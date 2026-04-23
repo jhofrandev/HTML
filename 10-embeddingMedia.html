@@ -226,5 +226,156 @@
         <td>Evita fullscreen en móvil</td>
       </tr>
     </table>
+
+    <h1>¿Qué es CSP (content Security Policy)?</h1>
+    <p>
+      CSP permite a los desarrolladores especificar qué fuentes de contenido son
+      confiables, ayudando a mitigar ataques como XSS (Cross-Site Scripting) 7
+      clickjacking.
+    </p>
+    <h2>¿Por qué CSP es clave para iframe?</h2>
+    <p>Porque los &lt;iframe&gt; pueden:</p>
+    <ul>
+      <li>Ejecutar scripts de terceros</li>
+      <li>Mostrar contenido externo</li>
+      <li>Intentar redireccionar la página padre</li>
+      <li>Ser usado para clickjacking</li>
+    </ul>
+    <p>CSP te permite decidir explícitamente:</p>
+    <ul>
+      <li>Qué iframes se pueden cargar</li>
+      <li>Desde dónde</li>
+      <li>Quién puede incrustar tu sitio (Frame Ancestors)</li>
+    </ul>
+
+    <h1>&lt;iframe&gt;: qué es y por qué es sensible</h1>
+    <p>
+      &lt;ifram&gt; permite incrustar otro documento HTML dentro del documento
+      actual
+    </p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;iframe src="pagina.html" width="640" height="360"&gt;&lt;/iframe&gt;
+      </code>
+    </pre>
+    <p>
+      ⚠️
+      <strong>PELIGRO:</strong> Si no usas CSP, cualquier sitio puede poner tu
+      página en un iframe (clickjacking). Por eso CSP es obligatorio para
+      iframes.
+    </p>
+    <h2>CSP para iframe: frame-src</h2>
+    <p>
+      La directiva frame-src especifica las fuentes válidad para cargar iframes.
+    </p>
+    <p>Ejemplo:</p>
+    <pre>
+      <code>
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+          &lt;meta charset="UTF-8"&gt;
+          &lt;title&gt;Documento seguro&lt;/title&gt;
+          &lt;meta http-equiv="Content-Security-Policy" content="frame-src https://www.youtube.com;"&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+          &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen&gt;&lt;/iframe&gt;
+          &lt;iframe width="560" height="315" src="https://wikipedia.org" allowfullscreen&gt;&lt;/iframe&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+      </code>
+    </pre>
+    <p>La directiva CSP es:</p>
+    <pre>
+      <code>
+        Content-Security-Policy: frame-src 'self' https://www.youtube.com;
+      </code>
+    </pre>
+    <p>✔️ Permite iframes solo de tu sitio y youtube.com</p>
+    <p>❌ bloquea cualquier otro origen</p>
+    <p>
+      ✔️ Si quieres bloquear todos los origenes coloca "none" en lugar de la URL
+    </p>
+    <pre>
+      <code>
+        &lt;meta http-equiv="Content-Security-Policy" content="frame-src 'none';"&gt;
+      </code>
+    </pre>
+    <h2>sandbox en &lt;iframe&gt; (HTML)</h2>
+    <p>
+      El atributo sandbox impone restricciones de seguridad adicionales al
+      contenido del iframe.
+    </p>
+    <p>Máxima restricción:</p>
+    <pre>
+      <code>
+        &lt;iframe sandbox src="pagina.html"&gt;&lt;/iframe&gt;
+      </code>
+    </pre>
+    <p>Esto automáticamente:</p>
+    <ul>
+      <li>Bloquea scripts</li>
+      <li>Bloquea formularios</li>
+      <li>Aísla el origen</li>
+      <li>Bloquea popups</li>
+      <li>Bloquea navegación superior</li>
+    </ul>
+    <h3>Permisos granulares</h3>
+    <pre>
+      <code>
+        &lt;iframe 
+          sandbox="allow-scripts allow-same-origin" 
+          src="pagina.html"&gt;
+        &lt;/iframe&gt;
+      </code>
+    </pre>
+    <p>Permite:</p>
+    <ul>
+      <li>scripts</li>
+      <li>formularios</li>
+      <li>no permite acceso al DOM padre</li>
+      <li>No permite navegar a la página principal</li>
+    </ul>
+    <p>
+      allow-same-origin trata el iframe como si fuera del mismo origen, lo cual
+      reduce el aislamiento, solo se recomienda para contenido interno y
+      confiable.
+    </p>
+
+    <h1>CSP sandbox vs &lt;iframe sandbox&gt;</h1>
+    <table>
+      <tr>
+        <th></th>
+        <th>CSP</th>
+        <th>&lt;iframe sandbox&gt;</th>
+      </tr>
+      <tr>
+        <td>Define</td>
+        <td>Política de seguridad del documento</td>
+        <td>Restricciones del iframe</td>
+      </tr>
+      <tr>
+        <td>Alcance</td>
+        <td>Todo el documento</td>
+        <td>Solo el contenido del iframe</td>
+      </tr>
+      <tr>
+        <td>Uso</td>
+        <td>Recomendado en Head</td>
+        <td>Atributo HTML en el iframe</td>
+      </tr>
+    </table>
+    <p>En la práctica:</p>
+    <ul>
+      <li>CSP define quién puede cargar y quién puede incrustar</li>
+      <li>iframe sandbox define qué puede hacer el contendio cargado</li>
+    </ul>
+    <h2>Buenas prácticas reales (production-grande)</h2>
+    <p>✅ Siempre define frame-src en tu CSP</p>
+    <p>✅ Usar frame-ancestors para prevenir clickjacking</p>
+    <p>✅ Aplicar sandbox a iframes de terceros</p>
+    <p>✅ Usa el pricipio de mínimo privilegio</p>
+    <p>✅ Nunca confíes ciegamente en embeds externos</p>
   </body>
 </html>
