@@ -1,246 +1,535 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formularios</title>
-  </head>
-  <body>
-    <h1>Uso de Formularios</h1>
-    <p>
-      Los formularios en HTML se utilizan para recopilar datos de los usaurios.
-      Proporcionan una forma para que los usuarios introduzcan información como
-      texto, contraseña y señecciones, y luego envíen esos datos a un servidor
-      para su procesamiento. Los formularios se creen utilizado el elemento, que
-      contiene varios elementos de entrada como y para definir los diferentes
-      campos de entrada del usuario.
-    </p>
-    <hr />
 
-    <h2>¿Qué es &lt;label&gt; y para qué sirve?</h2>
-    <p>
-      &lt;label&gt; es el texto/caption que describe un control de formulario
-      (como un input)
-    </p>
-    <h3>✅ ¿Por qué es tan importante?</h3>
-    <p>
-      Asociar correctamente un &lt;label&gt; con su contro trae ventajas claras:
-    </p>
-    <ul>
-      <li>
-        Accesibilidad: el lector de pantalla lee el label cuando el usaurio cea
-        en el input, ayudando a entender qué datos se debe ingresar.
-      </li>
-      <li>
-        Usabulidad: hacer clic/tocar el texto del label mueve el foco al input
-        (y en chackbox/radio lo activa), aumentando el "área clickeable", útl en
-        móvil.
-      </li>
-    </ul>
-    <hr />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formularios</title>
+</head>
 
-    <h2>🔗 Formas de asociar &lt;label&gt; con &lt;input&gt;</h2>
-    <p>
-      Hay dos formas correctas: asociación explícita (recomendada) e implícita.
-    </p>
-    <h3>A) Asociación explícita (recomendada): for + id</h3>
-    <p>
-      El for del &lt;label&gt; debe coincidir exactamente con el id del
-      &lt;input&gt;.
-    </p>
-    <pre>
+<body>
+  <h1>Uso de Formularios</h1>
+  <p>
+    Los formularios en HTML se utilizan para recopilar datos de los usaurios.
+    Proporcionan una forma para que los usuarios introduzcan información como
+    texto, contraseña y señecciones, y luego envíen esos datos a un servidor
+    para su procesamiento. Los formularios se creen utilizado el elemento, que
+    contiene varios elementos de entrada como y para definir los diferentes
+    campos de entrada del usuario.
+  </p>
+  <hr />
+
+  <h2>¿Qué es &lt;label&gt; y para qué sirve?</h2>
+  <p>
+    &lt;label&gt; es el texto/caption que describe un control de formulario
+    (como un input)
+  </p>
+  <h3>✅ ¿Por qué es tan importante?</h3>
+  <p>
+    Asociar correctamente un &lt;label&gt; con su contro trae ventajas claras:
+  </p>
+  <ul>
+    <li>
+      Accesibilidad: el lector de pantalla lee el label cuando el usaurio cea
+      en el input, ayudando a entender qué datos se debe ingresar.
+    </li>
+    <li>
+      Usabulidad: hacer clic/tocar el texto del label mueve el foco al input
+      (y en chackbox/radio lo activa), aumentando el "área clickeable", útl en
+      móvil.
+    </li>
+  </ul>
+  <hr />
+
+  <h2>🔗 Formas de asociar &lt;label&gt; con &lt;input&gt;</h2>
+  <p>
+    Hay dos formas correctas: asociación explícita (recomendada) e implícita.
+  </p>
+  <h3>A) Asociación explícita (recomendada): for + id</h3>
+  <p>
+    El for del &lt;label&gt; debe coincidir exactamente con el id del
+    &lt;input&gt;.
+  </p>
+  <pre>
+        <code>
+          &lt;label for="email"&gt;Correo&lt;/label&gt;
+          &lt;input id="email" name="email" type="email" autocomplete="email" required&gt;
+        </code>
+      </pre>
+  <ul>
+    <li>for="email" ⟷ id="email" (match exacto</li>
+    <li>El label queda programáticamente asociado y es clickeable.</li>
+  </ul>
+  <p>
+    📌 Nota: un &lt;label&gt; se asocia a un solo control, pero un control
+    puede tener múltiples labels apuntando al mismo id.
+  </p>
+
+  <h3>
+    B) Asociación implícita: anidar el &lt;input /&gt; dentro del
+    &lt;label&gt;
+  </h3>
+  <p>
+    Si metes el input adentro del label, no necesitas for/id para la
+    asociación (aunque el id sigue siendo útil para CSS/JS).
+  </p>
+  <pre>
+        <code>
+          &lt;label&gt;
+            Correo
+            &lt;input name="email" type="email" autocomplete="email" required&gt;
+          &lt;/label&gt;
+        </code>
+      </pre>
+  <hr />
+
+  <h2>⌨️ ¿Qué es &lt;input /&gt; y por qué es “tan grande” en HTML?</h2>
+  <p>
+    &lt;input&gt; crea controles interactivos para captar datos del usuario en
+    formularios, y cambia mucho según su atributo type. Si no defines type, el
+    valor por defecto es text.
+  </p>
+  <hr />
+
+  <h2>🧪 Tipos de &lt;input&gt; más comunes (y cuándo usarlos)</h2>
+  <p>
+    Elegir bien el type mejora UX (teclados correctos en móvil) y validación
+    nativa.
+  </p>
+  <p>Ejemplo mini varios tipos:</p>
+  <pre>
+        <code>
+          &lt;label for="user"&gt;Usuario&lt;/label&gt;
+          &lt;input id="user" name="user" type="text" autocomplete="username" required&gt;
+
+          &lt;label for="pass"&gt;Contraseña&lt;/label&gt;
+          &lt;input
+            id="pass"
+            name="pass"
+            type="password"
+            autocomplete="current-password"
+            required
+          &gt;
+
+          &lt;label for="age"&gt;Edad&lt;/label&gt;
+          &lt;input id="age" name="age" type="number" min="0" max="120"&gt;
+        </code>
+      </pre>
+  <p>
+    &lt;input&gt; soporta un montón de atributos (min/max,
+    minlength/maxlength, pattern, required, etc.).
+  </p>
+  <hr />
+
+  <h2>🧾 Atributos clave de inputs (los “de batalla”)</h2>
+  <h3>name (muy importante)</h3>
+  <p>
+    Es el nombre del campo que se envía al servidor (la “llave” del dato).
+    Esto es parte del modelo de &lt;input&gt; como control de formulario.
+  </p>
+  <h3>required</h3>
+  <p>Marca el campo como obligatorio.</p>
+  <h3>minlength / maxlength</h3>
+  <p>Controlan longitud mínima/máxima del valor.</p>
+  <h3>placeholder (ojo)</h3>
+  <p>
+    Es solo un hint visual, no sustituye al label (el placeholder desaparece
+    al escribir y no debe ser la única “etiqueta” del campo).
+  </p>
+  <p>Correcto:</p>
+  <pre>
+        <code>
+          &lt;label for="q"&gt;Buscar&lt;/label&gt;
+          &lt;input id="q" name="q" type="search" placeholder="Escribe tu búsqueda"&gt;
+        </code>
+      </pre>
+  <hr />
+
+  <h2>♿ Reglas de oro de accesibilidad (labels + inputs)</h2>
+  <ol>
+    <li>Cada control debe tener label asociado (explícito o implícito).</li>
+    <li>No dependas solo del placeholder como label.</li>
+    <li>
+      Si por diseño no quieres mostrar el label, puedes ocultarlo visualmente
+      pero mantenerlo en el código para tecnologías de asistencia (patrón
+      recomendado por W3C/WAI).
+    </li>
+  </ol>
+  <p>Ejemplo (label oculto visualmente, pero presente):</p>
+  <pre>
+        <code>
+          &lt;label for="search" class="visuallyhidden"&gt;Buscar&lt;/label&gt;
+          &lt;input id="search" name="search" type="search"&gt;
+          &lt;button type="submit"&gt;Buscar&lt;/button&gt;
+        </code>
+      </pre>
+  <hr />
+
+  <h2>✅ Plantilla “ideal” de un campo (lista para copiar)</h2>
+  <pre>
+        <code>
+          &lt;div class="field"&gt;
+            &lt;label for="email"&gt;Correo&lt;/label&gt;
+            &lt;input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              placeholder="tucorreo@ejemplo.com"
+            &gt;
+          &lt;/div&gt;
+        </code>
+      </pre>
+  <ul>
+    <li>Label asociado por for/id</li>
+    <li>Type correcto (email) y required</li>
+    <li>
+      autocomplete ayuda a UX (autorrelleno), y placeholder solo como apoyo
+      (no reemplazo).
+    </li>
+  </ul>
+  <hr />
+
+  <h2>🧩 El control: &lt;input type="file"&gt;</h2>
+  <p>
+    Un input con type="file" permite que el usuario seleccione uno o varios
+    archivos de su dispositivo. Luego esos archivos se pueden subir al
+    servidor enviando el formulario o manipularse con JavaScript usando la
+    File API.
+  </p>
+  <p>Ejemplo mínimo (1 archivo)</p>
+  <pre>
+        <code>
+          &lt;label for="cv"&gt;Sube tu CV&lt;/label&gt;
+          &lt;input id="cv" name="cv" type="file"&gt;
+        </code>
+      </pre>
+  <p>
+    Un &lt;label&gt; asociado mejora accesibilidad y usabilidad (el click/tap
+    en el texto enfoca el control).
+  </p>
+  <h3>🎛️ Atributos clave para subir archivos</h3>
+  <h4>A) accept (filtra tipos de archivo)</h4>
+  <p>
+    accept es una sugerencia al navegador para filtrar el selector de
+    archivos: extensiones (ej. .pdf) y/o MIME types (ej. image/jpeg).
+  </p>
+  <pre>
+        <code>
+          &lt;label for="foto"&gt;Foto de perfil (JPG/PNG)&lt;/label&gt;
+          &lt;input id="foto" name="foto" type="file" accept="image/png, image/jpeg"&gt;
+        </code>
+      </pre>
+  <mark>
+    ⚠️ Importante: no lo uses como validación real; el servidor debe validar
+    el archivo.
+  </mark>
+  <h4>B) multiple (seleccionar varios archivos)</h4>
+  <p>Si agregas multiple, el usuario puede seleccionar más de un archivo.</p>
+  <pre>
+        <code>
+          &lt;label for="docs"&gt;Adjuntar documentos&lt;/label&gt;
+          &lt;input id="docs" name="docs" type="file" multiple&gt;
+        </code>
+      </pre>
+  <h4>C) capture (móvil: cámara/micrófono)</h4>
+  <p>
+    Si accept indica imagen o video, capture puede sugerir usar la cámara
+    (frontal user o trasera environment).
+  </p>
+  <pre>
+        <code>
+          &lt;label for="evidencia"&gt;Tomar foto&lt;/label&gt;
+          &lt;input id="evidencia" name="evidencia" type="file" accept="image/*" capture="environment"&gt;
+        </code>
+      </pre>
+  <h3>📨 Enviar archivos: enctype="multipart/form-data" + method="post"</h3>
+  <p>Este es el paso que más se olvida:</p>
+  <ul>
+    <li>
+      Para subir archivos, el formulario debe enviarse como
+      multipart/form-data.
+    </li>
+    <li>Y normalmente requiere method="post".</li>
+  </ul>
+  <p>✅ Ejemplo completo (listo para producción en HTML):</p>
+  <pre>
+        <code>
+          &lt;form action="/upload" method="post" enctype="multipart/form-data"&gt;
+            &lt;label for="archivo"&gt;Selecciona un archivo&lt;/label&gt;
+            &lt;input id="archivo" name="archivo" type="file" accept=".pdf,.doc,.docx" required&gt;
+            &lt;button type="submit"&gt;Subir&lt;/button&gt;
+          &lt;/form&gt;
+        </code>
+      </pre>
+  <h3>🧠 ¿Qué valor “sale” del input? (y el famoso C:\fakepath\)</h3>
+  <ul>
+    <li>
+      El .value de un file input no da la ruta real del archivo; por
+      seguridad, muchos navegadores muestran C:\fakepath\... y en general solo
+      exponen el nombre.
+    </li>
+    <li>
+      ara trabajar con los archivos de verdad (nombre, tamaño, tipo, etc.) se
+      usa input.files (FileList).
+    </li>
+  </ul>
+  <h3>✅ Buenas prácticas (UX + seguridad)</h3>
+  <p>✅ UX</p>
+  <ul>
+    <li>Usa <label> bien asociado (for ↔ id).</li>
+    <li>
+      Si aceptas múltiples tipos, sé explícito en el texto (“PDF o Word”).
+    </li>
+    <li>Considera mostrar al usuario el nombre del archivo seleccionado con JS (usando files[0].name, etc.).</li>
+  </ul>
+  <p>✅ Seguridad (no te confíes del frontend)</p>
+  <ul>
+    <li>
+      accept solo filtra el selector; no impide que alguien intente subir otra cosa. Valida del lado servidor.
+    </li>
+    <li>Revisa en servidor:
+      <ul>
+        <li>tipo real (MIME)</li>
+        <li>tamaño</li>
+        <li>extensión</li>
+        <li>antivirus/escaneo si aplica (en apps serias)</li>
+        <li>renombrar archivos (evitar colisiones e inyecciones)</li>
+      </ul>
+    </li>
+  </ul>
+  <em>
+    (Estas últimas son recomendaciones prácticas; la fuente citada cubre que
+    accept no es validación y que multipart es necesario.)
+  </em>
+  <hr>
+
+  <h2>✅ Validación nativa (HTML5) — sin JavaScript</h2>
+  <p>
+    HTML5 permite declarar restricciones directamente con atributos.
+  </p>
+  <h3>required (campo obligatorio)</h3>
+  <p>Si un campo tiene required, el formulario no se envía si está vacío.</p>
+  <pre>
+      <code>
+        &lt;form&gt;
+          &lt;label for="username"&gt;Usuario&lt;/label&gt;
+          &lt;input id="username" name="username" type="text" required&gt;
+          &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+        &lt;/form&gt;
+      </code>
+    </pre>
+  <h3>Tipos semánticos (type="email", url, etc.)</h3>
+  <p>Tipos semánticos (type="email", url, etc.)</p>
+  <ul>
+    <li>type="email" obliga a un email válido (sintaxis).</li>
+    <li>type="url" obliga a una URL válida.</li>
+  </ul>
+  <pre>
       <code>
         &lt;label for="email"&gt;Correo&lt;/label&gt;
-        &lt;input id="email" name="email" type="email" autocomplete="email" required&gt;
+        &lt;input id="email" name="email" type="email" required&gt;
       </code>
     </pre>
-    <ul>
-      <li>for="email" ⟷ id="email" (match exacto</li>
-      <li>El label queda programáticamente asociado y es clickeable.</li>
-    </ul>
-    <p>
-      📌 Nota: un &lt;label&gt; se asocia a un solo control, pero un control
-      puede tener múltiples labels apuntando al mismo id.
-    </p>
-
-    <h3>
-      B) Asociación implícita: anidar el &lt;input /&gt; dentro del
-      &lt;label&gt;
-    </h3>
-    <p>
-      Si metes el input adentro del label, no necesitas for/id para la
-      asociación (aunque el id sigue siendo útil para CSS/JS).
-    </p>
-    <pre>
+  <h3>Longitud: minlength / maxlength</h3>
+  <p>Sirven para restringir cuántos caracteres se aceptan.</p>
+  <pre>
       <code>
-        &lt;label&gt;
-          Correo
-          &lt;input name="email" type="email" autocomplete="email" required&gt;
-        &lt;/label&gt;
+        &lt;label for="nick"&gt;Nickname (4 a 12)&lt;/label&gt;
+        &lt;input id="nick" name="nick" minlength="4" maxlength="12" required&gt;
+      </code>
+      <em>
+        Nota útil: minlength no implica required; un campo opcional puede enviarse vacío aunque tenga minlength.
+      </em>
+    </pre>
+  <h3>Rango numérico/fecha: min, max, step</h3>
+  <p>Para números y fechas puedes validar rango y “saltos”.</p>
+  <pre>
+      <code>
+        &lt;label for="edad"&gt;Edad (18 a 60)&lt;/label&gt;
+        &lt;input id="edad" name="edad" type="number" min="18" max="60" required&gt;
       </code>
     </pre>
-    <hr />
-
-    <h2>⌨️ ¿Qué es &lt;input /&gt; y por qué es “tan grande” en HTML?</h2>
-    <p>
-      &lt;input&gt; crea controles interactivos para captar datos del usuario en
-      formularios, y cambia mucho según su atributo type. Si no defines type, el
-      valor por defecto es text.
-    </p>
-    <hr />
-
-    <h2>🧪 Tipos de &lt;input&gt; más comunes (y cuándo usarlos)</h2>
-    <p>
-      Elegir bien el type mejora UX (teclados correctos en móvil) y validación
-      nativa.
-    </p>
-    <p>Ejemplo mini varios tipos:</p>
-    <pre>
+  <h3>pattern (regex) + title (ayuda al usuario)</h3>
+  <p>pattern obliga a que el valor cumpla una expresión regular.</p>
+  <p>
+    Además, se recomienda incluir una descripción visible y/o title para que el navegador pueda mostrarla cuando falle
+    la validación.
+  </p>
+  <p>Ejemplo: código postal de 5 dígitos:</p>
+  <pre>
       <code>
-        &lt;label for="user"&gt;Usuario&lt;/label&gt;
-        &lt;input id="user" name="user" type="text" autocomplete="username" required&gt;
-
-        &lt;label for="pass"&gt;Contraseña&lt;/label&gt;
+        &lt;label for="cp"&gt;Código postal&lt;/label&gt;
         &lt;input
-          id="pass"
-          name="pass"
-          type="password"
-          autocomplete="current-password"
+          id="cp"
+          name="cp"
+          type="text"
+          pattern="[0-9]{5}"
+          title="Debe tener 5 dígitos (ej. 12345)"
           required
         &gt;
+      </code>
+    </pre>
+  <hr>
 
-        &lt;label for="age"&gt;Edad&lt;/label&gt;
-        &lt;input id="age" name="age" type="number" min="0" max="120"&gt;
+  <h2>♿ Validación accesible (error messages bien hechos)</h2>
+  <p>
+    La validación no solo es “bloquear envío”, también es guiar al usuario a corregir
+  </p>
+  <h3>aria-describedby para asociar mensajes al campo</h3>
+  <p>
+    aria-describedby enlaza un input con un texto descriptivo (instrucciones o error) por id.
+  </p>
+  <pre>
+      <code>
+        &lt;label for="nombre"&gt;Nombre&lt;/label&gt;
+        &lt;input id="nombre" name="nombre" aria-describedby="nombre-error"&gt;
+        &lt;p id="nombre-error" role="alert"&gt;&lt;/p&gt;
       </code>
     </pre>
-    <p>
-      &lt;input&gt; soporta un montón de atributos (min/max,
-      minlength/maxlength, pattern, required, etc.).
-    </p>
-    <hr />
+  <ul>
+    <li>
+      aria-describedby puede referenciar elementos por id para describir el control.
+    </li>
+    <li>
+      role="alert" ayuda a que lectores de pantalla anuncien el mensaje al aparecer (recomendación común en patrones
+      de errores accesibles).
+    </li>
+  </ul>
+  <h3>aria-invalid="true" para marcar campos con error</h3>
+  <p>
+    Cuando un campo falla validación, puedes marcarlo con aria-invalid="true" (pero solo después de validar, no desde el
+    inicio).
+  </p>
 
-    <h2>🧾 Atributos clave de inputs (los “de batalla”)</h2>
-    <h3>name (muy importante)</h3>
-    <p>
-      Es el nombre del campo que se envía al servidor (la “llave” del dato).
-      Esto es parte del modelo de &lt;input&gt; como control de formulario.
-    </p>
-    <h3>required</h3>
-    <p>Marca el campo como obligatorio.</p>
-    <h3>minlength / maxlength</h3>
-    <p>Controlan longitud mínima/máxima del valor.</p>
-    <h3>placeholder (ojo)</h3>
-    <p>
-      Es solo un hint visual, no sustituye al label (el placeholder desaparece
-      al escribir y no debe ser la única “etiqueta” del campo).
-    </p>
-    <p>Correcto:</p>
-    <pre>
-      <code>
-        &lt;label for="q"&gt;Buscar&lt;/label&gt;
-        &lt;input id="q" name="q" type="search" placeholder="Escribe tu búsqueda"&gt;
-      </code>
-    </pre>
-    <hr />
+  <h2>Checklist “pro” de validación (rápido y práctico)</h2>
+  <p>✅ Usa type correcto (email, url, number, etc.) para validación nativa.</p>
+  <p>
+    ✅ Usa required, minlength/maxlength, min/max/step, pattern donde aplique.
+  </p>
+  <p>✅ Si usas pattern, agrega texto explicando el formato y/o title.</p>
+  <p>
+    ✅ Para UX/a11y: mensaje de error en texto, cerca del campo, y asociado con aria-describedby.
+  </p>
+  <p>✅ Marca errores con aria-invalid cuando corresponda.</p>
+  <p>✅ Siempre valida también en servidor (cliente se puede manipular).</p>
+  <hr>
 
-    <h2>♿ Reglas de oro de accesibilidad (labels + inputs)</h2>
-    <ol>
-      <li>Cada control debe tener label asociado (explícito o implícito).</li>
-      <li>No dependas solo del placeholder como label.</li>
-      <li>
-        Si por diseño no quieres mostrar el label, puedes ocultarlo visualmente
-        pero mantenerlo en el código para tecnologías de asistencia (patrón
-        recomendado por W3C/WAI).
-      </li>
-    </ol>
-    <p>Ejemplo (label oculto visualmente, pero presente):</p>
-    <pre>
-      <code>
-        &lt;label for="search" class="visuallyhidden"&gt;Buscar&lt;/label&gt;
-        &lt;input id="search" name="search" type="search"&gt;
-        &lt;button type="submit"&gt;Buscar&lt;/button&gt;
-      </code>
-    </pre>
-    <hr />
+  <h2>Limitaciones</h2>
+  <h3>
+    1. ⚠️ Limitación #1: La validación del navegador NO sustituye la del
+    servidor
+  </h3>
+  <p>
+    Aunque uses required, pattern, min, etc., igual debes validar en el backend.
+  </p>
+  <p>
+    MDN lo dice explícitamente: la validación de restricciones en HTML no elimina la necesidad de validación del lado
+    del servidor, porque se puede evadir de varias formas (editar HTML con DevTools, mandar un request manual, o setear
+    valores con JavaScript sin disparar ciertas validaciones).
+  </p>
+  <p>✅ Conclusión práctica:</p>
+  <ul>
+    <li>Cliente = mejora UX</li>
+    <li>Servidor = seguridad y verdad</li>
+  </ul>
+  <h3>
+    2. ⚠️ Limitación #2: Mensajes nativos del navegador (tooltips) son inconsistentes y difíciles de controlar
+  </h3>
+  <h4>2.1 No puedes “estilizar” fácilmente los mensajes por defecto</h4>
+  <p>
+    Los mensajes y tooltips cambian por navegador y no se personalizan bien.
+  </p>
+  <p>
+    Por ejemplo, MDN explica que la validación nativa muestra mensajes “propios” del navegador y esos mensajes varían.
+  </p>
+  <h4>2.2 Accesibilidad: pueden ser vagos y no siempre anunciados</h4>
+  <p>Hay documentación que advierte que los mensajes por defecto pueden ser:</p>
+  <ul>
+    <li>vagos (“Please fill out this field”)</li>
+    <li>inconsistentes</li>
+    <li>
+      y que lectores de pantalla podrían no anunciarlos de forma confiable.
+    </li>
+  </ul>
+  <p>
+    ✅ Solución típica:
+  </p>
+  <ul>
+    <li>desactivar nativo con novalidate</li>
+    <li>hacer UI de errores accesible</li>
+    <li>complementar con errores inline + ARIA</li>
+  </ul>
+  <h3>
+    3. ⚠️ Limitación #3: Muchas reglas son “básicas”; validaciones complejas requieren JS
+  </h3>
+  <p>HTML5 cubre “lo típico”, pero en cuanto quieres reglas como:</p>
+  <ul>
+    <li>“contraseña debe tener mayúscula + número + símbolo”</li>
+    <li>“si selecciona X, entonces Y es obligatorio”</li>
+    <li>“al menos 1 checkbox del grupo”</li>
+    <li>vas a necesitar JavaScript o validación servidor.</li>
+  </ul>
+  <p>
+    MDN: las restricciones básicas pueden declararse con atributos, pero restricciones más complejas se cubren con la
+    Constraint Validation API.
+  </p>
+  <h3>4. ⚠️ Limitación #4: Algunos atributos NO aplican a todos los type</h3>
+  <p>Este punto causa muchos bugs.</p>
+  <h4>4.1 pattern no aplica a todo</h4>
+  <p>
+    pattern se usa para regex, pero aplica a ciertos tipos (p. ej. text, tel, email, url, password, search).
+  </p>
+  <p>Por eso no funciona, por ejemplo, como “regex” para type="number".</p>
+  <h4>4.2 minlength NO implica required</h4>
+  <p>
+    minlength no hace que el campo sea obligatorio; un input opcional puede enviarse vacío aunque tenga minlength.
+  </p>
+  <p>Eso significa que si quieres:</p>
+  <ul>
+    <li>mínimo 8 caracteres y obligatorio</li>
+    <li>debes usar: minlength="8" required.</li>
+  </ul>
+  <h4>4.3 minlength solo valida si el usuario “cambió” el valor</h4>
+  <h3>
+    5. ⚠️ Limitación #5: “Bypass” voluntario con novalidate y formnovalidate
+  </h3>
+  <p>
+    A veces es útil (guardar borrador), pero también significa que la validación puede saltarse.
+  </p>
+  <ul>
+    <li>novalidate en &lt;form&gt; hace que el envío evite la validación nativa.</li>
+    <li>
+      formnovalidate en un botón submit puede ignorarla solo para ese envío.
+    </li>
+  </ul>
+  <p>✅ Implicación:</p>
+  <ul>
+    <li>Si tu backend no valida, te pueden enviar cualquier cosa.</li>
+  </ul>
+  <h3>6. ♿ Limitaciones y buenas prácticas en accesibilidad de errores</h3>
+  <h4>6.1 aria-invalid no debe ponerse antes de validar</h4>
+  <p>
+    W3C recomienda que aria-invalid="true" se active solo después de la validación o intento de envío, no desde el
+    inicio.
+  </p>
+  <h4>6.2 Asociar mensaje de error al campo</h4>
+  <p>
+    Para que un lector de pantalla entienda el error, lo correcto es vincular el error al control con aria-describedby.
+  </p>
+  <pre>
+    <code>
+      &lt;label for="email"&gt;Correo&lt;/label&gt;
+      &lt;input id="email" name="email" type="email" aria-describedby="email-error"&gt;
+      &lt;p id="email-error" role="alert"&gt;&lt;/p&gt;
+    </code>
+  </pre>
+  <h4>6.3 role="alert": útil, pero úsalo con cuidado</h4>
+  <p>
+    MDN explica que role="alert" anuncia cambios a tecnologías de asistencia y es apropiado para mensajes importantes
+    (como error de input), pero debe usarse con moderación por lo intrusivo.s
+  </p>
+</body>
 
-    <h2>✅ Plantilla “ideal” de un campo (lista para copiar)</h2>
-    <pre>
-      <code>
-        &lt;div class="field"&gt;
-          &lt;label for="email"&gt;Correo&lt;/label&gt;
-          &lt;input
-            id="email"
-            name="email"
-            type="email"
-            autocomplete="email"
-            required
-            placeholder="tucorreo@ejemplo.com"
-          &gt;
-        &lt;/div&gt;
-      </code>
-    </pre>
-    <ul>
-      <li>Label asociado por for/id</li>
-      <li>Type correcto (email) y required</li>
-      <li>
-        autocomplete ayuda a UX (autorrelleno), y placeholder solo como apoyo
-        (no reemplazo).
-      </li>
-    </ul>
-    <hr />
-
-    <h2>🧩 El control: &lt;input type="file"&gt;</h2>
-    <p>
-      Un input con type="file" permite que el usuario seleccione uno o varios
-      archivos de su dispositivo. Luego esos archivos se pueden subir al
-      servidor enviando el formulario o manipularse con JavaScript usando la
-      File API.
-    </p>
-    <p>Ejemplo mínimo (1 archivo)</p>
-    <pre>
-      <code>
-        &lt;label for="cv"&gt;Sube tu CV&lt;/label&gt;
-        &lt;input id="cv" name="cv" type="file"&gt;
-      </code>
-    </pre>
-    <p>
-      Un &lt;label&gt; asociado mejora accesibilidad y usabilidad (el click/tap
-      en el texto enfoca el control).
-    </p>
-    <h3>🎛️ Atributos clave para subir archivos</h3>
-    <h4>A) accept (filtra tipos de archivo)</h4>
-    <p>
-      accept es una sugerencia al navegador para filtrar el selector de
-      archivos: extensiones (ej. .pdf) y/o MIME types (ej. image/jpeg).
-    </p>
-    <pre>
-      <code>
-        &lt;label for="foto"&gt;Foto de perfil (JPG/PNG)&lt;/label&gt;
-        &lt;input id="foto" name="foto" type="file" accept="image/png, image/jpeg"&gt;
-      </code>
-    </pre>
-    <mark>
-      ⚠️ Importante: no lo uses como validación real; el servidor debe validar
-      el archivo.
-    </mark>
-    <h4>B) multiple (seleccionar varios archivos)</h4>
-    <p>Si agregas multiple, el usuario puede seleccionar más de un archivo.</p>
-    <pre>
-      <code>
-        &lt;label for="docs"&gt;Adjuntar documentos&lt;/label&gt;
-        &lt;input id="docs" name="docs" type="file" multiple&gt;
-      </code>
-    </pre>
-    <h4>C) capture (móvil: cámara/micrófono)</h4>
-    <p>
-      Si accept indica imagen o video, capture puede sugerir usar la cámara
-      (frontal user o trasera environment).
-    </p>
-    <pre>
-      <code>
-        &lt;label for="evidencia"&gt;Tomar foto&lt;/label&gt;
-        &lt;input id="evidencia" name="evidencia" type="file" accept="image/*" capture="environment"&gt;
-      </code>
-    </pre>
-  </body>
 </html>
